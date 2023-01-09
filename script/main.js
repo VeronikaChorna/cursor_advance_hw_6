@@ -77,43 +77,38 @@ function getStudentInfo(student) {
 console.log('3. Students information:', getStudentInfo(students[0]));
 
 // -----------------------------------------------------------------------------------------------------------------
-function getStudentsNames(student) {
-    let studentsName = [];
-    const iterator = student.values();
-        for (const value of iterator) {
-            for (let key in value) {
-                if (key == 'name') {
-                studentsName.push(value[key]);
-                }
-            }
+function getStudentsNames(students) {
+    let studentsNames = [];
+    const iterator = students.values();
+        for (const student of iterator) {
+                studentsNames.push(student['name']);
         }
-    return studentsName.sort();
+    return studentsNames.sort();
 }
 console.log("4. Students' names in alphabetical order:", getStudentsNames(students));
 
 // -----------------------------------------------------------------------------------------------------------------
-// Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
-
 function getBestStudent(student) {
     let bestMark = 0;
-    let mark;
-    let stud;
+    let bestName;
     for (let i = 0; i < student.length; i++) {
-        stud = getStudentInfo(students[i]);
-            console.log(stud);
-            mark = stud.averageMark;
-            console.log(mark);
-                if (Number(mark) > bestMark) {
-                    bestMark = Number(mark);
-                    console.log(bestMark);
-                    if(Object.values(stud.averageMark) == bestMark) {
-                        console.log(stud);
-                    }
-                }
+        let stud = getStudentInfo(students[i]);
+        let mark = stud.averageMark;
+            if (Number(mark) > bestMark) {
+                bestMark = Number(mark);
+                bestName = stud['name'];
+            }
     }
-    // return bestMark;
+    return bestName;
 }
 
-console.log(getBestStudent(students));
+console.log('5. Best student name:', getBestStudent(students));
 
-// console.log(students);
+// -----------------------------------------------------------------------------------------------------------------
+function calculateWordLetters(word) {
+    count = {};
+    word = word.split('');
+    word.forEach(function(i) { count[i] = (count[i]||0) + 1;});
+    return count;
+}
+console.log('6. Counts of characters:', calculateWordLetters("тест"));
