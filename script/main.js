@@ -1,24 +1,3 @@
-// const user = {
-//     name: 'Nika',
-//     age: 22,
-//     'last  name': 'Chorna',
-//     'job title': 'QC',
-// };
-
-
-// user.fullName = 'Nika Chorna';
-
-// console.log(user['last  name']);
-
-// for (let key in user) {
-//     console.log(user[key]);
-// }
-
-// console.log(Object.keys(user));
-// console.log(Object.values(user));
-// console.log(Object.entries(user));
-
-
 const students = [{
     name: "Tanya",
     course: 3,
