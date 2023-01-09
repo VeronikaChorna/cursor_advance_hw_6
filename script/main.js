@@ -86,8 +86,8 @@ console.log('5. Best student name:', getBestStudent(students));
 // -----------------------------------------------------------------------------------------------------------------
 function calculateWordLetters(word) {
     count = {};
-    word = word.split('');
+    word = word.toLowerCase().split('');
     word.forEach(function(i) { count[i] = (count[i]||0) + 1;});
     return count;
 }
-console.log('6. Counts of characters:', calculateWordLetters("тест"));
+console.log('6. Counts of characters:', calculateWordLetters("Test"));
