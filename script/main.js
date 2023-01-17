@@ -67,10 +67,10 @@ function getStudentsNames(students) {
 console.log("4. Students' names in alphabetical order:", getStudentsNames(students));
 
 // -----------------------------------------------------------------------------------------------------------------
-function getBestStudent(student) {
+function getBestStudent(students) {
     let bestMark = 0;
     let bestName;
-    for (let i = 0; i < student.length; i++) {
+    for (let i = 0; i < students.length; i++) {
         let stud = getStudentInfo(students[i]);
         let mark = stud.averageMark;
             if (Number(mark) > bestMark) {
@@ -85,9 +85,9 @@ console.log('5. Best student name:', getBestStudent(students));
 
 // -----------------------------------------------------------------------------------------------------------------
 function calculateWordLetters(word) {
-    count = {};
+    countLetters = {};
     word = word.toLowerCase().split('');
-    word.forEach(function(i) { count[i] = (count[i]||0) + 1;});
-    return count;
+    word.forEach(function(i) { countLetters[i] = (countLetters[i]||0) + 1;});
+    return countLetters;
 }
 console.log('6. Counts of characters:', calculateWordLetters("Test"));
